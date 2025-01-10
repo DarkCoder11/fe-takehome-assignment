@@ -1,0 +1,6 @@
+
+@layer tw {  
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+}

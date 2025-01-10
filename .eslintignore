@@ -1,0 +1,9 @@
+**/node_modules/*
+dist
+coverage
+*.json
+*.lock
+*.css
+*.scss
+**/out/*
+env.d.ts

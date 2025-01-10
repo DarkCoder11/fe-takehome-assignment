@@ -1,0 +1,155 @@
+{
+  "root": true,
+  "plugins": ["lodash"],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "default-param-last": "warn",
+    "jsx-quotes": ["error", "prefer-single"],
+    "lodash/prefer-lodash-method": "warn",
+    "max-len": ["error", 100, 2, {
+      "ignoreUrls": true,
+      "ignoreComments": true,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }],
+    "object-curly-newline": "off",
+    "prefer-regex-literals": "warn",
+    "semi": ["error", "never"],
+    "function-call-argument-newline": "warn",
+    "function-paren-newline": "warn",
+    "import/no-extraneous-dependencies": 0,
+    "import/no-import-module-exports": "warn",
+    "import/no-default-export": "error",
+    "import/prefer-default-export": "off",
+    "consistent-return": "off",
+    "no-loss-of-precision": "warn",
+    "no-promise-executor-return": "warn",
+    "no-restricted-exports": "warn",
+    "no-restricted-imports": [2, {
+      "patterns": ["!*.css"],
+      "paths": ["lodash"]
+    }],
+    "no-underscore-dangle": 0,
+    "no-unsafe-optional-chaining": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/button-has-type": "off",
+    "react/destructuring-assignment": "warn",
+    "react/forbid-prop-types": ["warn", {
+      "forbid": ["any", "array", "object"],
+      "checkContextTypes": true,
+      "checkChildContextTypes": true
+    }],
+    "react/function-component-definition": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".js", "ts", "tsx"] }],
+    "react/jsx-no-bind": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-no-useless-fragment": "warn",
+    "react/jsx-props-no-multi-spaces": "warn",
+    "react/no-arrow-function-lifecycle": "warn",
+    "react/no-unknown-property": "warn",
+    "react/no-unstable-nested-components": "warn",
+    "react/no-unused-class-component-methods": "warn",
+    "react/prop-types": "off",
+    "react/require-default-props": "warn",
+    "react/sort-comp": "warn",
+    "react/static-property-placement": "off",
+    "react/state-in-constructor": "off",
+    "func-names": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never",
+        "": "never"
+      }
+    ],
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 10
+      }
+    ],
+    "@typescript-eslint/semi": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "external",
+          "builtin",
+          "internal",
+          ["sibling", "parent"],
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "@(react)",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["internal", "react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["./src/@types/*"],
+      "rules": {
+        "import/no-default-export": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/destructuring-assignment": "off",
+        "no-console": "off",
+        "no-alert": "off",
+        "no-restricted-globals": "off"
+      }
+    },
+    {
+      "files": ["*.mock.ts"],
+      "rules": {
+        "newline-per-chained-call": "off"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "vite.config.ts",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src"
+        ]
+      }
+    },
+    "react": {
+      "version": "18.3.1"
+    }
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "globals": {
+    "cy": true,
+    "before": true
+  }
+}

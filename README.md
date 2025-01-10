@@ -1,112 +1,69 @@
-# Frontend Developer Take-Home Assignment
+# 🛠️ Web3 App
 
----
+### Preview 👉 https://web3-app-azure.vercel.app
 
-#### **Overview**
+## 📝 Description
+This application is a **React-based Web3 wallet integration** designed to provide users with an intuitive and streamlined blockchain transaction experience. Built with **Dynamic SDK**, **Wagmi**, and EIP-4337 account abstraction, the app enables the following key features:
+- Seamless wallet connection with embedded wallets.
+- Real-time display of wallet address and balance.
+- Ability to perform gasless transactions using a paymaster service.
+- User feedback through toast messages for various states (e.g., transaction pending, success, rejection).
 
-Welcome to the Frontend Developer take-home assignment! The goal is to build a React-based application that integrates an **embedded wallet** using **account abstraction (EIP-4337)** and performs a **real userOperation** with a paymaster service on a testnet.
+### Assumptions
+- The app is deployed and tested on the Sepolia testnet with a valid paymaster service.
+- Users are familiar with basic blockchain wallet operations, such as connecting a wallet and initiating transactions.
+- Transaction amounts and recipient addresses are handled as inputs or defaults during interaction.
 
-This assignment focuses on your ability to implement a lovely Web3 wallet experience, integrate existing account abstraction, and handle a simple on-chain interaction from the front-end.
+### Limitations
+- Styling and UI design are currently minimal, focusing on functionality over aesthetics. Given more time, key elements would be styled for a more polished user experience.
+- The implementation prioritizes functional flow (e.g., transaction handling, error feedback) over advanced UX features like animations or complex layouts.
+- Gasless transactions rely on an external paymaster service, which is assumed to be correctly set up and compatible with the testnet.
+- Error handling and edge case coverage are functional but could be extended further with additional time for testing and refinement.
 
----
+## 🌄 Demo
 
-### **Requirements**
 
-#### **Core Features**
-1. **React Application**:
-   - Build a single-page React application with a clean and responsive UI.
-   
-2. **Embedded Wallet Integration**:
-   - Use **Dynamic SDK**, **Zerodev SDK**, or an equivalent provider to implement an embedded wallet.
+## 📚 Stack
 
-3. **Display Wallet Details**:
-   - Show the user’s **wallet address**.
-   - Display the **wallet balance** in ETH or another supported testnet token.
+- React
+- TypeScript
+- TailwindCSS
+- Dynamic SDK
+- Wagmi/Viem
+- Lodash
+- ESLint/Prettier
 
-4. **Real UserOperation with Paymaster (OPTIONAL)**:
-   - Integrate with a **paymaster service** to perform a **gasless transaction** on a testnet.
-   - Example userOperation:
-     - Send a small amount (e.g., 0.00001 bETH) to a **hardcoded recipient address**.
-   - Provide feedback to the user on the transaction status (e.g., pending, success, or error).
+## 🗂 Folder Structure
 
----
+```
+src
+├── @types
+├── assets
+├── components
+├── const
+├── containers
+├── hooks
+├── layouts
+├── routes
+├── styles
+├── tools
+├── utils
+```
 
-### **Assignment Details**
+## ➕ Installation and Setup Instructions
 
-#### **1. Embedded Wallet Integration**
-- Use an SDK that supports **account abstraction (EIP-4337)**. Dynamic, Zerodev, Biconomy, Particle, Alchemy are all acceptable.
-- After wallet connection, display:
-  - **Wallet Address**.
-  - **Wallet Balance** in ETH or another supported token.
+#### Example:
 
-#### **2. User Interface**
-- A responsive design with the following features:
-  - **Connect Wallet Button**: Allows the user to connect their wallet.
-  - **Wallet Details Section**: Displays the wallet address and balance.
-  - **Transaction Button**: Initiates a userOperation to send a small amount of ETH.
-  - **Design**: Make it look pretty and feel great.
+Clone down this repository. You will need `node` stalled globally on your machine.
 
-#### **3. Real UserOperation (Optional)**
-- Implement a button labeled **“Send Gasless Transaction”** that:
-  1. Creates and submits a **userOperation**.
-  2. Leverages a **paymaster service** to sponsor gas fees.
-  3. Sends a small amount of ETH (e.g., 0.00001 bETH) to a hardcoded recipient address on Base Sepolia.
-- Provide feedback to the user on:
-  - Transaction status (e.g., pending, success, error).
-  - Transaction hash (after successful submission).
+Installation:
 
----
+`npm install`
 
-### **Deliverables**
+To Start App:
 
-1. **GitHub Repository**:
-   - Push your code as a branch or pull request to this repository.
-   - Include a `README.md` with:
-     - A brief description of the app.
-     - Any assumptions or limitations in your implementation.
+`npm run dev`
 
-2. **Demo (Optional)**:
-   - Provide a short video (2-5 minutes) demonstrating the functionality.
+To Visit App:
 
----
-
-### **Evaluation Criteria**
-
-#### **Core Features**
-- **Wallet Integration**:
-  - Successful integration of the embedded wallet with EIP-4337 support.
-- **Real UserOperation**:
-  - Proper integration with a paymaster service to perform gasless transactions.
-- **Transaction Feedback**:
-  - Clear status updates for the user throughout the transaction process.
-
-#### **Code Quality**
-- Clean, modular, and maintainable code.
-- Effective use of React features (e.g., hooks, components).
-
-#### **UI/UX**
-- Intuitive and responsive interface.
-- Clear and accessible design.
-- It just looks and feels great.
-
-#### **Bonus (Optional)**
-- Handle edge cases gracefully (e.g., insufficient funds, SDK errors).
-- Include unit and integration tests for key components.
-
----
-
-### **Resources**
-
-- **Dynamic SDK Documentation**: [https://docs.dynamic.xyz](https://docs.dynamic.xyz)
-- **Zerodev SDK Documentation**: [https://docs.zerodev.xyz](https://docs.zerodev.xyz)
-- **EIP-4337 Explained**: [https://eips.ethereum.org/EIPS/eip-4337](https://eips.ethereum.org/EIPS/eip-4337)
-- **Testnets for Ethereum**: [https://chainlist.org](https://chainlist.org)
-- **React Documentation**: [https://reactjs.org/docs/getting-started.html](https://reactjs.org/docs/getting-started.html)
-- **Base Faucet**: [https://www.alchemy.com/faucets/base-sepolia](https://www.alchemy.com/faucets/base-sepolia)
-
----
-
-### **Expected Time Commitment**
-This assignment should take approximately **4-6 hours**, focusing on building a functional MVP with clean and maintainable code. Bonus features are not required but can showcase your initiative and creativity.
-
-Good luck, and happy coding! 🚀
+`http://localhost:5173`
